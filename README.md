@@ -1,5 +1,5 @@
-# Simple-Calc
-A very simple C++ program to add two numbers
+# More-Advance-Calc
+A simple calculator C++ program.
 
 # HOW TO COMPILE
 Unix : g++ main.cpp
