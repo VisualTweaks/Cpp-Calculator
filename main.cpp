@@ -1,25 +1,37 @@
-//importing modules
+/*Importing modules*/
 #include <iostream>
-
+#include <cmath>
 using namespace std;
 
-// defines main function
-int main()
-{
+/*Defining Main function*/
+int main(){
+
+    /*Defining Vars*/	
+    double num1, num2;	
+    char op;
 	
+	/*User input*/
+    cout << "Enter number: ";
+    cin >> num1;
+    cout << "Enter op";
+    cin >> op;
+    cout << "Enter number: ";
+    cin >> num2;
 
-	//Delcares the numbers
-	int number1;
-	int number2;
+	/*Operation statments*/
+    int res;
+    if(op == '+'){
+        res = round(num1 + num2);
+    }else if(op == '-'){
+        res = round(num1 - num2);
+    }else if(op == '*'){
+        res = round(num1 * num2);
+    }else if(op == '/'){
+        res = round(num1 / num2);
+    }else {
+        cout << "invaild";
+    }
+    cout << res;
 
-	//Takes user input
-	cout << "Enter Number: ";
-	cin >> number1;
-	cout << "Enter Number: ";
-	cin >> number2;
-
-	//Prints out the answer
-	cout <<  "The answer is "; 
-	cout << number1 + number2 << endl;
-	return 0;
+    return 0;
 }
