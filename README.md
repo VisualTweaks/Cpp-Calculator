@@ -1,4 +1,4 @@
-# More-Advance-Calc
+# Calculator
 A simple calculator C++ program.
 
 # HOW TO COMPILE
