@@ -3,22 +3,22 @@
 #include <cmath>
 using namespace std;
 
-/*Defining normal calc function*/
+/*Normal Calculator Function*/
 int normalcalc(){
 
-    /*Defining Vars*/
+    /*Defining Variables*/
     double num1, num2;
     char op;
-
-    /*User input*/
+    
+    /*User Input*/
     cout << "Enter Number: ";
     cin >> num1;
     cout << "Enter Operator: ";
     cin >> op;
     cout << "Enter Number: ";
     cin >> num2;
-    
-    /*Operation input*/
+
+    /*Defining Operator*/
     double result;
     switch(op){
         case '+':
@@ -40,13 +40,14 @@ int normalcalc(){
     return result;
 }
 
-/*Defining Square root calc function*/
+/*Square Root Calculator Function*/
 int sqroot(){
 
+    /*Defining Variables*/
     double num1, num2;
     char op;
 
-    /*Defining Vars*/
+    /*User Input*/
     cout << "Enter Number: ";
     cin >> num1;
     cout << "Enter Operator: ";
@@ -54,7 +55,7 @@ int sqroot(){
     cout << "Enter Number: ";
     cin >> num2;
 
-    /*Operation input*/
+    /*Defining Operator*/
     double result;
     switch(op){
         case '+':
@@ -76,27 +77,45 @@ int sqroot(){
     return result;
 }
 
-/*Defining main function*/
+/*Power Calculator Function*/
+int powers(int baseNum, int powNum){
+    int result = 1;
+    for(int i = 0; i < powNum; result++){
+        result = result * baseNum;
+    }
+    cout << "The answer is " << result << endl;
+    return result;
+}
+
+/*Main Function*/
 int main(){
     
-    /*Calculator options*/
+    /*Defining The choice*/
     char calc;
     cout << "Would you like the normal calculator (Y/N): ";
     cin >> calc;
     
     if(calc == 'Y'){
-        /*Calling the function*/
         normalcalc();
     }else if(calc == 'N'){
-        char calc2;
+        char calc;
         cout << "Would you like the sqrt calcluator (Y/N): ";
-        cin >> calc2;
+        cin >> calc;
 
-        if(calc2 == 'Y'){
+        if(calc == 'Y'){
             sqroot();
-        }else if(calc2 == 'N'){
-            exit(0);
+        }else if(calc == 'N'){
+            char calc;
+            cout << "Would you like to use powers (Y/N): ";
+            cin >> calc;
+
+            if(calc == 'Y'){
+                powers(int,int);/*Input Variables for 'int'*/
+            }else if(calc == 'N'){
+                exit(0);/*Exits System*/
+            }
         }
     }
     return 0;
 }
+/*I will be updating this as I learn more C++*/
