@@ -1,5 +1,6 @@
 /*Importing mods*/
 #include <iostream>
+#include <cstdlib>
 #include <cmath>
 using namespace std;
 
@@ -116,6 +117,6 @@ int main(){
             }
         }
     }
-    return 0;
+    return EXIT_SUCCESS;
 }
 /*I will be updating this as I learn more C++*/
