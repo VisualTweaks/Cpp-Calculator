@@ -1,25 +1,26 @@
-/*Importing mods*/
 #include <iostream>
+#include <stdlib.h>
 #include <cstdlib>
 #include <cmath>
 using namespace std;
 
-/*Normal Calculator Function*/
+void Welcome(){
+    cout << "Welcome to the TI-84 Termianl calculator." << endl;
+}
+
 int normalcalc(){
 
-    /*Defining Variables*/
+    system("clear");
     double num1, num2;
     char op;
-    
-    /*User Input*/
+
     cout << "Enter Number: ";
     cin >> num1;
     cout << "Enter Operator: ";
     cin >> op;
     cout << "Enter Number: ";
     cin >> num2;
-
-    /*Defining Operator*/
+    
     double result;
     switch(op){
         case '+':
@@ -35,28 +36,98 @@ int normalcalc(){
             result = num1 / num2;
             break;
         default:
-            cout << "An error has occurred in the following application, Please rerun the application\n";
+            cout << "Invaild Input" << endl;
     }
-    cout << "The answer is " << result << endl;
+    cout << "The answer is ";
+    cout << result << endl;
     return result;
 }
 
-/*Square Root Calculator Function*/
-int sqroot(){
+int Cosine(){
+    system("clear");
+    double parms, result;
+    #define PI 3.14159265
+    cout << "Enter Degress: ";
+    cin >> parms;
+    result = cos(parms * PI / 180.0);
+    cout << "The answer is ";
+    cout << result << endl;
+    return result;
+}
 
-    /*Defining Variables*/
+int ACosine(){
+    system("clear");
+    double parms, result;
+    #define PI 3.14159265
+    cout << "Enter Degress: ";
+    cin >> parms;
+    result = acos(parms * 180.0/ PI);
+    cout << "The answer is ";
+    cout << result << endl;
+    return result;
+}
+
+int Sine(){
+    system("clear");
+    double parms, result;
+    #define PI 3.14159265
+    cout << "Enter Degress: ";
+    cin >> parms;
+    result = sin(parms * PI / 180.0);
+    cout << "The answer is ";
+    cout << result << endl;
+    return result;
+} 
+
+int ASine(){
+    system("clear");
+    double parms, result;
+    #define PI 3.14159265
+    cout << "Enter Degress: ";
+    cin >> parms;
+    result = asin(parms * 180.0/ PI);
+    cout << "The answer is ";
+    cout << result << endl;
+    return result;
+}
+
+int Tangent(){
+    system("clear");
+    double parms, result;
+    #define PI 3.14159265
+    cout << "Enter Degress: ";
+    cin >> parms;
+    result = tan(parms * PI / 180.0);
+    cout << "The answer is ";
+    cout << result << endl;
+    return result;
+} 
+
+int ATangent(){
+    system("clear");
+    double parms, result;
+    #define PI 3.14159265
+    cout << "Enter Degress: ";
+    cin >> parms;
+    result = atan(parms * 180.0/ PI);
+    cout << "The answer is ";
+    cout << result << endl;
+    return result;
+}
+
+int sqroot(){
+    
+    system("clear");
     double num1, num2;
     char op;
 
-    /*User Input*/
     cout << "Enter Number: ";
     cin >> num1;
     cout << "Enter Operator: ";
     cin >> op;
     cout << "Enter Number: ";
     cin >> num2;
-
-    /*Defining Operator*/
+    
     double result;
     switch(op){
         case '+':
@@ -72,51 +143,74 @@ int sqroot(){
             result = sqrt(num1 / num2);
             break;
         default:
-            cout << "An error has occurred in the following application, Please rerun the application\n";
+            cout << "Invaild Input" << endl;
     }
-    cout << "The answer is " << result << endl;
+    cout << "The answer is ";
+    cout << result << endl;
     return result;
 }
 
-/*Power Calculator Function*/
-int powers(int baseNum, int powNum){
-    int result = 1;
-    for(int i = 0; i < powNum; result++){
-        result = result * baseNum;
-    }
-    cout << "The answer is " << result << endl;
-    return result;
-}
-
-/*Main Function*/
 int main(){
-    
-    /*Defining The choice*/
+
+    system("clear");
+    Welcome();
     char calc;
-    cout << "Would you like the normal calculator (Y/N): ";
+    cout << "Would you like to use the normal calculator (Y/N): ";
     cin >> calc;
-    
+
     if(calc == 'Y'){
         normalcalc();
     }else if(calc == 'N'){
-        char calc;
-        cout << "Would you like the sqrt calcluator (Y/N): ";
+        cout << "Would you like to use Sqrt calculator (Y/N): ";
         cin >> calc;
 
-        if(calc == 'Y'){
+        if (calc == 'Y'){
             sqroot();
         }else if(calc == 'N'){
-            char calc;
-            cout << "Would you like to use powers (Y/N): ";
+            cout << "Would you like to use COS calculator (Y/N): ";
             cin >> calc;
 
             if(calc == 'Y'){
-                powers(int,int);/*Input Variables for 'int'*/
+                Cosine();
             }else if(calc == 'N'){
-                exit(0);/*Exits System*/
+                cout << "Would you like to use SIN calculator (Y/N): ";
+                cin >> calc;
+
+                if(calc == 'Y'){
+                    Sine();
+                }else if(calc == 'N'){
+                    cout << "Would you like to use the TAN calculator (Y/N): ";
+                    cin >> calc;
+
+                    if(calc == 'Y'){
+                        Tangent();
+                    }else if(calc == 'N'){
+                        cout << "Would you like to use the Arc COS calculator (Y/N): ";
+                        cin >> calc;
+
+                        if(calc == 'Y'){
+                            ACosine();
+                        }else if(calc == 'N'){
+                            cout << "Would you like to use the Arc SIN calculator (Y/N): ";
+                            cin >> calc;
+
+                            if(calc == 'Y'){
+                                ASine();
+                            }else if(calc == 'N'){
+                                cout << "Would you like to use the Arc TAN calculator (Y/N): ";
+                                cin >> calc;
+
+                                if(calc == 'Y'){
+                                    ATangent();
+                                }else if(calc == 'N'){
+                                    main();
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
     return EXIT_SUCCESS;
 }
-/*I will be updating this as I learn more C++*/
