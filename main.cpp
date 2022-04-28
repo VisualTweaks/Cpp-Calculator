@@ -43,6 +43,52 @@ int normalcalc(){
     return result;
 }
 
+int sqroot(){
+    
+    system("clear");
+    double num1, num2;
+    char op;
+
+    cout << "Enter Number: ";
+    cin >> num1;
+    cout << "Enter Operator: ";
+    cin >> op;
+    cout << "Enter Number: ";
+    cin >> num2;
+    
+    double result;
+    switch(op){
+        case '+':
+            result = sqrt(num1 + num2);
+            break;
+        case '-':
+            result = sqrt(num1 - num2);
+            break;
+        case '*':
+            result = sqrt(num1 * num2);
+            break;
+        case '/':
+            result = sqrt(num1 / num2);
+            break;
+        default:
+            cout << "Invaild Input" << endl;
+    }
+    cout << "The answer is ";
+    cout << result << endl;
+    return result;
+}
+
+int powers(){
+    int num1,pownum;
+    cout << "Enter number: ";
+    cin >> num1;
+    cout << "Enter Power number: ";
+    cin >> pownum;
+    cout << "The answer is ";
+    cout << pow(num1, pownum) << endl;
+    return 0;
+}
+
 int Cosine(){
     system("clear");
     double parms, result;
@@ -115,36 +161,34 @@ int ATangent(){
     return result;
 }
 
-int sqroot(){
-    
+int CosH(){
     system("clear");
-    double num1, num2;
-    char op;
+    double parms, result;
+    cout << "Enter Number: ";
+    cin >> parms;
+    result = cosh(parms);
+    cout << "The answer is ";
+    cout << result << endl;
+    return result;
+}
 
+int SinH(){
+    system("clear");
+    double parms, result;
     cout << "Enter Number: ";
-    cin >> num1;
-    cout << "Enter Operator: ";
-    cin >> op;
+    cin >> parms;
+    result = sinh(parms);
+    cout << "The answer is ";
+    cout << result << endl;
+    return result;
+}
+
+int TanH(){
+    system("clear");
+    double parms, result;
     cout << "Enter Number: ";
-    cin >> num2;
-    
-    double result;
-    switch(op){
-        case '+':
-            result = sqrt(num1 + num2);
-            break;
-        case '-':
-            result = sqrt(num1 - num2);
-            break;
-        case '*':
-            result = sqrt(num1 * num2);
-            break;
-        case '/':
-            result = sqrt(num1 / num2);
-            break;
-        default:
-            cout << "Invaild Input" << endl;
-    }
+    cin >> parms;
+    result = tanh(parms);
     cout << "The answer is ";
     cout << result << endl;
     return result;
@@ -203,7 +247,35 @@ int main(){
                                 if(calc == 'Y'){
                                     ATangent();
                                 }else if(calc == 'N'){
-                                    main();
+                                    cout << "Would you like to use powers (Y/N): ";
+                                    cin >> calc;
+
+                                    if(calc == 'Y'){
+                                        powers();
+                                    }else if(calc == 'N'){
+                                        cout << "Would you like to use COSH (Y/N): ";
+                                        cin >> calc;
+
+                                        if(calc == 'Y'){
+                                            CosH();
+                                        }else if(calc == 'N'){
+                                            cout << "Wpuld you like to use SINH (Y/N): ";
+                                            cin >> calc;
+
+                                            if(calc == 'Y'){
+                                                SinH();
+                                            }else if(calc == 'N'){
+                                                cout << "Would you like to use TANH (Y/N): ";
+                                                cin >> calc;
+
+                                                if(calc == 'Y'){
+                                                    TanH();
+                                                }else if(calc == 'N'){
+                                                    main();
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
